@@ -1,0 +1,9 @@
+This line is under 50 characters long
+This line is just over 50 characters long, you see
+?
+This line is soooooooooooooooooo looooouoooooooooo
+oooooooooooooooooooooooooooooooooooooooooooooooooo
+oooooong!
+
+Total lines over 50 chars: 2
+Offending lines: 1, 2, 
