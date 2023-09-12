@@ -10,7 +10,7 @@ int main()
     int col = 0; // counter to track which column we are printing to
     int line = 0; // counter to track which line we are copying
     
-    int trunc[100]; // array to hold offending line numbers
+    int trunc[100] = {0}; // array to hold offending line numbers
     int idx = 0; // counter to track index of trunc to write to
     trunc[0] = -1;
 
