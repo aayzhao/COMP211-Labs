@@ -1,6 +1,10 @@
 # COMP211-Labs
 Code for labs in COMP211, UNC Fall 2023.
 
+Software is licensed under a modified version of the MIT license,
+specifically disallowing use of this software in conflict with 
+academic honor codes.
+
 Labs are located in their respective folders.
 
 ## Classwork
