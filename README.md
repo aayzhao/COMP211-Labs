@@ -23,11 +23,5 @@ This file has some self practice for things outside of the classroom.
 It also holds sanity tests, mainly for open-CLI quizzes.
 
 ### Signing
-As of 9/14/2023, all commits will be signed with a verified key. Github commits should reflect this in the
-<<<<<<< HEAD
-commit history.  
-||||||| 002f2c3
-commit history. 
-=======
-commit history. 
->>>>>>> a0df853abd1a419b157985fc309a7bf565506de7
+As of 9/14/2023, all commits will be signed with a verified key. Github 
+commits should reflect this in the commit history.
