@@ -11,10 +11,12 @@ Labs are located in their respective folders.
 Files for following along and experimentation during classes
 
 ## Lab 00
-Simple Hello, World lab. 
+Simple "Hello, World" lab. 
 
 ## Lab 01
-Basic string library function implmentations. Convert strings to lowercase, very rudimentary text justification.
+Basic string library function implmentations. Part 1 is
+Convert strings to lowercase, Part 2 is very rudimentary text justification
+and truncation.
 
 ## Tests
 This file has some self practice for things outside of the classroom. 
@@ -22,4 +24,4 @@ It also holds sanity tests, mainly for open-CLI quizzes.
 
 ### Signing
 As of 9/14/2023, all commits will be signed with a verified key. Github commits should reflect this in the
-commit history. 
+commit history.  
