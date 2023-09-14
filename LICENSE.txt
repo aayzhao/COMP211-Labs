@@ -1,4 +1,4 @@
-MIT License
+MIT (modified) License
 
 Copyright (c) 2023 aayzhao
 
@@ -11,6 +11,11 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+The use of this software is not in violation of active academic honor codes for
+any university or educational institution. This software, its code, and its 
+comments may not be copied or modified for use that violates the honor code
+of an academic institution.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
