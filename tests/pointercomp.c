@@ -13,17 +13,17 @@ int main()
     int a = 30;
     int* b = &a;
     int c = 15;
-//    int d[20] = {0};
+    int d[20] = {0};
 
-//    size_t arr_size = sizeof(d) / sizeof(d[0]);
+    size_t arr_size = sizeof(d) / sizeof(d[0]);
 
-//    int* ptr = d;
-//    for (unsigned long i = 0; i < arr_size; i++)
-//    {
-//        *ptr = i + 1;
-//        printf("%d\n", *ptr);
-//        ptr++;
-//    }
+    int* ptr = d;
+    for (unsigned long i = 0; i < arr_size; i++)
+    {
+        *ptr = i + 1;
+        printf("%d\n", *ptr);
+        ptr++;
+    }
 
     printf("\nPre-operations:\n");
     printf("a: %d\n", a);
