@@ -13,4 +13,5 @@ Simple Hello, World lab.
 Basic string library function implmentations. Convert strings to lowercase, very rudimentary text justification.
 
 ## Tests
-Sanity tests locations, mainly for open-CLI quizzes.
+This file has some self practice for things outside of the classroom. 
+It also holds sanity tests, mainly for open-CLI quizzes.
