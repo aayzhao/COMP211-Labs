@@ -15,3 +15,7 @@ Basic string library function implmentations. Convert strings to lowercase, very
 ## Tests
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
+
+### Signing
+As of 9/14/2023, all commits will be signed with a verified key (assuming I did not break the key signing 
+process).
