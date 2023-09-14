@@ -10,7 +10,7 @@ void fizzbuzz(int* x, int* y)
 
 int main() 
 {
-    int a = 20;
+    int a = 30;
     int* b = &a;
     int c = 15;
 //    int d[20] = {0};
