@@ -16,7 +16,7 @@ Simple "Hello, World" lab.
 ## Lab 01
 Basic string library function implmentations. Part 1 is
 Convert strings to lowercase, Part 2 is very rudimentary text justification
-and truncation, using stdio functions.
+and truncation, using stdio.h functions.
 
 ## Tests
 This file has some self practice for things outside of the classroom. 
