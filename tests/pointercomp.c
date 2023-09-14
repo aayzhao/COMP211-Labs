@@ -15,7 +15,7 @@ int main()
     int c = 15;
     int d[20] = {0};
 
-    size_t arr_size = sizeof(d) / sizeof(d[0]);
+    size_t arr_size = sizeof(d) / sizeof(d[0]); // 20
 
     int* ptr = d;
     for (unsigned long i = 0; i < arr_size; i++)
@@ -30,8 +30,8 @@ int main()
     printf("b: %d\n", *b);
     printf("c: %d\n", c);
 
-    a -= c;
-    fizzbuzz(b, &c);
+    a -= c; // a = 15
+    fizzbuzz(b, &c); // b = 15 * 15 = 225, a = b = 225
 
     printf("\nPost-operations:\n");
     printf("a: %d\nb: %d\nc: %d\n", a, *b, c);
