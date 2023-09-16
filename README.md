@@ -22,6 +22,12 @@ and truncation, using stdio.h functions.
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
 
-### Signing
+## Bin, Includes, and Source
+Includes is where headers for helper functions are located. Said functions
+are defined in Source, and binaries built for the files will be located
+in Bin. These files can be automatically compiled and linked with the
+makefile located in /tests/.
+
+## Signing
 As of 9/14/2023, all commits will be signed with a verified key. Github 
 commits should reflect this in the commit history.
