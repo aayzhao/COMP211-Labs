@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
+#include "../includes/output.h"
 void printintarr(int arr[], int size)
 {
     printf("\n");
