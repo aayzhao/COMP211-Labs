@@ -17,4 +17,9 @@ void fill(int arr[],        // output: array to be filled
           int size,         // input: size of array
           int val);         // input: value to fill array with
 
+// fills entire array of long integers with specified value
+void lfill(long arr[],      // output: array to be filled
+           int size,        // input: size of array
+           long val);        // input: value to fill array with
+
 #endif

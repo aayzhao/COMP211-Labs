@@ -17,7 +17,7 @@ void printintarr(int arr[], int size)
 
 void printarrdet(int arr[], int size)
 {
-    printf("\nArray Contents: { ");
+    printf("\nSize of array: %d\nArray Contents: { ", size);
     for (int i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
@@ -26,3 +26,28 @@ void printarrdet(int arr[], int size)
     
     return;
 }
+
+void printlongarr(long arr[], int size)
+{
+    printf("\n");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%ld ", arr[i]);
+    }
+    printf("\n");
+
+    return;
+}
+
+void printlarrdet(long arr[], int size)
+{
+    printf("\nSize of array: %d\nArray Contents: { ", size);
+    for (int i = 0; i < size; i++)
+    {
+        printf("%ld ", arr[i]);
+    }
+    printf("}\n");
+
+    return;
+}
+
