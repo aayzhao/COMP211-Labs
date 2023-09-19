@@ -7,7 +7,7 @@ academic honor codes.
 
 Labs are located in their respective folders. Scratchwork created in class
 is located in /classwork/, and helper libraries designed to aid in open-CLI 
-quizzes are located with header .h filesand source .c files 
+quizzes are located with header .h files and source .c files 
 in /includes/ and /source/, respectively.
 
 ## Classwork

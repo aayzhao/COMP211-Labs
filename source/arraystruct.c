@@ -28,19 +28,11 @@ int arrtmax(array_t *arr)
 
     if (arr->type == 'i')
     {
-        int* _a = (int*)arr->a;
-        for (int i = 1; i < arr->size; i++)
-        {
-            if (_a[max_idx] < _a[i]) max_idx = i;
-        }
+        max_idx = arrmax( (int*)arr->a, arr->size);
     }
     else if (arr->type == 'l')
     {
-        long* _a = (long*)arr->a;
-        for (int i = 1; i < arr->size; i++)
-        {
-            if (_a[max_idx] < _a[i]) max_idx = i;
-        }
+        max_idx = larrmax( (long*)arr->a, arr->size);
     }
     else
     {
@@ -56,19 +48,11 @@ int arrtmin(array_t *arr)
     int min_idx = 0;
     if (arr->type == 'i')
     {
-        int* _a = (int*)arr->a;
-        for (int i = 1; i < arr->size; i++)
-        {
-            if (_a[i] < _a[min_idx]) min_idx = i;
-        }
+        min_idx = arrmin( (int*)arr->a, arr->size);
     }
     else if (arr->type == 'l')
     {
-        long* _a = (long*)arr->a;
-        for (int i = 1; i < arr->size; i++)
-        {
-            if (_a[i] < _a[min_idx]) min_idx = i;
-        }
+        min_idx = larrmin( (long*)arr->a, arr->size);
     }
     else 
     {
@@ -154,4 +138,3 @@ int larrmin(long* arr, int size)
 
     return min_idx;
 }
-
