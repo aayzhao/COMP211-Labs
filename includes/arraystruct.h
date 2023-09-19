@@ -3,13 +3,12 @@
 
 #include <stdbool.h>
 
-struct array 
+typedef struct array 
 {
     char type;
     void* a;
     int size;
-};
-typedef struct array array_t;
+} array_t;
 
 void arrayfill(array_t *arr, long val);
 const char* arrtstr(array_t *arr);

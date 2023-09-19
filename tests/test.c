@@ -19,7 +19,6 @@ int main()
     printf("test struct: ");
     printlongarr(arr_struct.a, arr_struct.size);
 
-
     printintarr(arr, size);
     printarrdet(arr, size);
     
