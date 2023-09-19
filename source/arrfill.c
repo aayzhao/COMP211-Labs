@@ -9,8 +9,6 @@ void fillasc(int arr[], int size, int val)
     {
         arr[i] = _val++;
     }
-
-    return;
 }
 
 void filldesc(int arr[], int size, int val)
@@ -20,8 +18,6 @@ void filldesc(int arr[], int size, int val)
     {
         arr[i] = _val--;
     }
-
-    return;
 }
 
 void fill(int arr[], int size, int val)
@@ -29,6 +25,24 @@ void fill(int arr[], int size, int val)
     for (int i = 0; i < size; i++)
     {
         arr[i] = val;
+    }
+}
+
+void lfillasc(long arr[], int size, long val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val++;
+    }
+}
+
+void lfilldesc(long arr[], int size, long val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val--;
     }
 }
 

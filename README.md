@@ -1,11 +1,14 @@
 # COMP211-Labs
-Code for labs in COMP211, UNC Fall 2023.
+Code for labs, classwork, and practice in COMP 211, UNC Fall 2023.
 
 Software is licensed under a modified version of the MIT license,
 specifically disallowing use of this software in conflict with 
 academic honor codes.
 
-Labs are located in their respective folders.
+Labs are located in their respective folders. Scratchwork created in class
+is located in /classwork/, and helper libraries designed to aid in open-CLI 
+quizzes are located with header .h filesand source .c files 
+in /includes/ and /source/, respectively.
 
 ## Classwork
 Files for following along and experimentation during classes
@@ -27,6 +30,14 @@ Includes is where headers for helper functions are located. Said functions
 are defined in Source, and binaries built for the files will be located
 in Bin. These files can be automatically compiled and linked with the
 makefile located in /tests/.
+
+### arrfill.h
+Contains declarations for functions to fill int, long arrays with specified values, or
+with runs of values in either ascending or descending orders.
+
+### output.h
+Contains declarations for functions to print arrays to console. Currently 
+supports printing long and int arrays.
 
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified key. Github 

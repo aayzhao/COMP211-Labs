@@ -17,6 +17,16 @@ void fill(int arr[],        // output: array to be filled
           int size,         // input: size of array
           int val);         // input: value to fill array with
 
+// fills entire long array starting from index 0, with numbers starting from specified value and ascending
+void lfillasc(long arr[],   // output: array to be filled
+              int size,     // input: size of array
+              long val);    // input: value to fill array from, inclusive
+
+// fills entire long array starting from index 0, with numbers starting from specified value and descending
+void lfilldesc(long arr[],  // output: array to be filled
+               int size,    // input: size of array
+               long val);   // input: value to fill array from, inclusive
+
 // fills entire array of long integers with specified value
 void lfill(long arr[],      // output: array to be filled
            int size,        // input: size of array
