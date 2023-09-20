@@ -31,6 +31,10 @@ are defined in Source, and binaries built for the files will be located
 in Bin. These files can be automatically compiled and linked with the
 makefile located in /tests/.
 
+### algo.h
+Contains declarations for algorithms. Includes algorithms such as binary
+search (for sorted arrays), and heapsort, for long and int arrays.
+
 ### arrfill.h
 Contains declarations for functions to fill int, long arrays with specified values, or
 with runs of values in either ascending or descending orders.
@@ -38,6 +42,10 @@ with runs of values in either ascending or descending orders.
 ### output.h
 Contains declarations for functions to print arrays to console. Currently 
 supports printing long and int arrays.
+
+### arraystruct.h
+Contains declarations for the array-t struct, which mimics arrays in java. 
+Also declares helper functions for manipulating array-t structs. 
 
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified key. Github 
