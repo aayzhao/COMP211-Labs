@@ -25,6 +25,12 @@ int main()
     printlongarr(larr, lsize);
     lheapsort(larr, 0, lsize - 1);
     printlongarr(larr, lsize);
+    
+    printf("%d\n", lbinsearch(larr, 0, 11, -21));
+    printf("%d\n", binsearch(arr, 0, 9, 3));
+
+    printf("Contains -21:\t%s\n", lbinsearch(larr, 0, 11, -21) != -1 ? "true" : "false");
+    printf("Contains 3:\t%s\n", binsearch(arr, 0, 9, 3) != -1 ? "true" : "false");
 
     return EXIT_SUCCESS;
 }

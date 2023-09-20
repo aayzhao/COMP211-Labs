@@ -125,3 +125,68 @@ void ldequeue(long* arr, int from, int to)
 
     lbubbledown(arr, from, --to);
 }
+
+int csorted(int* arr, int size)
+{
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] < arr[i - 1]) return 0;
+    }
+    return 1;
+}
+
+int lcsorted(long* arr, int size)
+{
+    for (int i = 1; i < size; i++)
+    {
+        if (arr[i] < arr[i - 1]) return 0;
+    }
+    return 1;
+}
+
+int binsearch(int* arr, int lower, int upper, int target)
+{
+    int mid = -1;
+    upper++;
+    while (lower < upper)
+    {
+        mid = (lower + upper) / 2;
+        if (arr[mid] < target)
+        {
+            lower = mid + 1;
+        }
+        else if (arr[mid] > target)
+        {
+            upper = mid;
+        }
+        else 
+        {
+            return mid;
+        }
+    }
+
+    return -1;
+}
+
+int lbinsearch(long* arr, int lower, int upper, long target)
+{
+    int mid = -1;
+    upper++;
+    while (lower < upper)
+    {
+        mid = (lower + upper) / 2;
+        if (arr[mid] < target)
+        {
+            lower = mid + 1;
+        }
+        else if (arr[mid] > target)
+        {
+            upper = mid;
+        }
+        else
+        {
+            return mid;
+        }
+    }
+    return -1;
+}
