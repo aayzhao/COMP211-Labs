@@ -1,23 +1,27 @@
 CC = gcc
 CFLAGS = -I/mnt/learncli/workdir/COMP211-Labs/includes
+TA = test
+BIN = ../bin/
+INC = ../includes/
+SRC = ../source/
 
 #../bin/%.o: ../source/%.c ../includes/%.h
 #	$(CC) -c -o $@ ../source/%.c
 
-test.out: ../bin/output.o ../bin/arrfill.o ../bin/arraystruct.o ../bin/algo.o ../bin/test.o
-	$(CC) ../bin/arrfill.o ../bin/output.o ../bin/arraystruct.o ../bin/algo.o ../bin/test.o -o test.out
+$(TA).out: $(BIN)output.o $(BIN)arrfill.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o
+	$(CC) $(BIN)arrfill.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o -o $(TA).out
 
-../bin/test.o: test.c
-	$(CC) -c test.c -o ../bin/test.o
+$(BIN)$(TA).o: $(TA).c
+	$(CC) -c $(TA).c -o $(BIN)$(TA).o
 
-../bin/output.o: ../includes/output.h ../source/output.c
-	$(CC) -c ../source/output.c -o ../bin/output.o
+$(BIN)output.o: $(INC)output.h $(SRC)output.c
+	$(CC) -c $(SRC)output.c -o $(BIN)output.o
 
-../bin/arrfill.o: ../includes/arrfill.h ../source/arrfill.c
-	$(CC) -c ../source/arrfill.c -o ../bin/arrfill.o
+$(BIN)arrfill.o: $(INC)arrfill.h $(SRC)arrfill.c
+	$(CC) -c $(SRC)arrfill.c -o $(BIN)arrfill.o
 
-../bin/arraystruct.o: ../bin/arrfill.o ../includes/arraystruct.h ../source/arraystruct.c
-	$(CC) -c ../source/arraystruct.c -o ../bin/arraystruct.o
+$(BIN)arraystruct.o: $(INC)arrfill.h $(SRC)arrfill.c $(INC)arraystruct.h $(SRC)arraystruct.c
+	$(CC) -c $(SRC)arraystruct.c -o $(BIN)arraystruct.o
 
-../bin/algo.o: ../includes/algo.h ../source/algo.c
-	$(CC) -c ../source/algo.c -o ../bin/algo.o
+$(BIN)algo.o: $(INC)algo.h $(SRC)algo.c
+	$(CC) -c $(SRC)algo.c -o $(BIN)algo.o

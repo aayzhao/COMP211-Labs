@@ -31,6 +31,12 @@ int main()
 
     printf("Contains -21:\t%s\n", lbinsearch(larr, 0, 11, -21) != -1 ? "true" : "false");
     printf("Contains 3:\t%s\n", binsearch(arr, 0, 9, 3) != -1 ? "true" : "false");
+    
+    int* ptr = (int*) malloc(100*sizeof(int));
+    printf("%p\n", ptr);
+
+    free(ptr);
+    printf("%p\n", ptr);
 
     return EXIT_SUCCESS;
 }
