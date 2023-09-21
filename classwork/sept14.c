@@ -13,13 +13,13 @@ int main ()
     char str[1024];
 
     fgets(str, 1024, stdin);
-    ret = memchr(str, '\n', strlen(str));
+//    ret = memchr(str, '\n', strlen(str));
     string s = {strlen(str), {str}};
 
     size_t size = s.len;
 
     printf("\nSize of input string: %lu\n", size);
-    printf("Input string: %s\n", s.str);
+//    printf("Input string: %s\n", s.str);
 
     
 

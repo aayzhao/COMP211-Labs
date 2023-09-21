@@ -39,7 +39,8 @@ void lheapsort(long* arr, int from, int to)
     {
         lbubbledown(arr, i, to);
     }
-
+    
+    //dequeue
     while (to >= from)
     {
         ldequeue(arr, from, to--);
