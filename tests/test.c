@@ -6,6 +6,13 @@
 #include "../includes/arraystruct.h"
 #include "../includes/algo.h"
 
+int inc(int x)
+{
+    int y = 0;
+    y += x;
+    return y;
+}
+
 int main()
 {
     int arr[] = { 20, 1, 52, -1, -23, 2, 401, 5, 9, 102 };
@@ -37,6 +44,8 @@ int main()
 
     free(ptr);
     printf("%p\n", ptr);
-
+    
+    printf("y val: %d\n", inc(10)); // 10
+    printf("y val: %d\n", inc(30)); // 40
     return EXIT_SUCCESS;
 }
