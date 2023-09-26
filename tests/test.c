@@ -8,7 +8,7 @@
 
 int inc(int x)
 {
-    int y = 0;
+    static int y = 0;
     y += x;
     return y;
 }
@@ -21,6 +21,9 @@ int main()
     free(ptr);
     ptr = NULL;
     
+    int* p = &a;
+    int** pp = &p;
+
     printf("%d\n", *&a);
     printf("null pointer: %s\n", ptr == NULL ? "true" : "false");
     printf("%p\n", ptr);
