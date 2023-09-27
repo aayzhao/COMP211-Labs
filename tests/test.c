@@ -6,29 +6,7 @@
 #include "../includes/arraystruct.h"
 #include "../includes/algo.h"
 
-int inc(int x)
-{
-    static int y = 0;
-    y += x;
-    return y;
-}
-
 int main()
 {
-    int* ptr = (int*) malloc(100*sizeof(int));
-    printf("%p\n", ptr);
-    int a = 20;
-    free(ptr);
-    ptr = NULL;
-    
-    int* p = &a;
-    int** pp = &p;
-
-    printf("%d\n", *&a);
-    printf("null pointer: %s\n", ptr == NULL ? "true" : "false");
-    printf("%p\n", ptr);
-    
-    printf("y val: %d\n", inc(10)); // 10
-    printf("y val: %d\n", inc(30)); // 40
     return EXIT_SUCCESS;
 }

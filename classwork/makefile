@@ -1,6 +1,6 @@
 CC = gcc
 #CFLAGS = -I/mnt/learncli/workdir/COMP211-Labs/includes
-TA ?= sept21
+TA ?= test
 BIN = ../bin/
 INC = ../includes/
 SRC = ../source/
