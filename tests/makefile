@@ -8,8 +8,8 @@ SRC = ../source/
 #../bin/%.o: ../source/%.c ../includes/%.h
 #	$(CC) -c -o $@ ../source/%.c
 
-$(TA).out: $(BIN)output.o $(BIN)arrfill.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o
-	$(CC) $(BIN)arrfill.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o -o $@
+$(TA).out: $(BIN)binops.o $(BIN)output.o $(BIN)arrfill.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o
+	$(CC) $(BIN)binops.o $(BIN)arrfill.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o -o $@
 
 $(BIN)$(TA).o: $(TA).c
 	$(CC) -c $(TA).c -o $@
@@ -25,3 +25,6 @@ $(BIN)arraystruct.o: $(INC)arrfill.h $(SRC)arrfill.c $(INC)arraystruct.h $(SRC)a
 
 $(BIN)algo.o: $(INC)algo.h $(SRC)algo.c
 	$(CC) -c $(SRC)algo.c -o $@
+
+$(BIN)binops.o: $(INC)binops.h $(SRC)binops.c
+	$(CC) -c $(SRC)binops.c -o $@

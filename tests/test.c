@@ -5,7 +5,7 @@
 #include "../includes/arrfill.h"
 #include "../includes/arraystruct.h"
 #include "../includes/algo.h"
-
+#include "../includes/binops.h"
 int main()
 {
     return EXIT_SUCCESS;
