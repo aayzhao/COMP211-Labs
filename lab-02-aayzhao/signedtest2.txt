@@ -1,0 +1,1 @@
+The signed 16-bit representation of +100000 is: not possible.
