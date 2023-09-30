@@ -27,11 +27,11 @@ representation with MSB indicating positive or negative. Part 2 is
 converting ints to 16-bit representation in 2's complement. Part 3 is negating
 2's complement, given a string of binary. 
 
-## Tests
+## /tests/
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
 
-## Bin, Includes, and Source
+## /bin/, /includes/, and /source/
 Includes is where headers for helper functions are located. Said functions
 are defined in Source, and binaries built for the files will be located
 in Bin. These files can be automatically compiled and linked with the
@@ -39,7 +39,8 @@ makefile located in /tests/.
 
 ### algo.h
 Contains declarations for algorithms. Includes algorithms such as binary
-search (for sorted arrays), and heapsort, for long and int arrays.
+search (for sorted arrays), and heapsort, for long and int arrays. Declarations
+for the heap struct and its helper functions are located here as well.
 
 ### arrfill.h
 Contains declarations for functions to fill int, long arrays with specified values, or
@@ -50,13 +51,14 @@ Contains declarations for functions to print arrays to console. Currently
 supports printing long and int arrays.
 
 ### arraystruct.h
-Contains declarations for the array-t struct, which mimics arrays in java. 
-Also declares helper functions for manipulating array-t structs. 
+Contains declarations for the array-t struct, which mimics arrays in java;
+helper functions for manipulating array-t structs; and the heap type struct and
+associate 
 
 ### binops.h
 Contains declarations for binary operation functions, such as printing the
 binary representation of a given int.
 
 ## Signing
-As of 9/14/2023, all commits will be signed with a verified key. Github 
+As of 9/14/2023, all commits will be signed with a verified SSH key. Github 
 commits should reflect this in the commit history.
