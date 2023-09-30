@@ -26,6 +26,9 @@ int pop(heap_t *heap);      // input: heap struct
 // return head of heap without popping it.
 int peek(heap_t* heap);     // input: heap struct
 
+// return 1 (true) if heap is empty, else 0 (false)
+int heap_empty(heap_t* heap); // input: heap struct
+
 // create heap_t with given size and return a pointer to it.
 heap_t* create_heap(int size);  // size of heap
 

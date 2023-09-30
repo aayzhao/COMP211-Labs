@@ -56,7 +56,7 @@ int push(heap_t* heap, int elem)
 
 int pop(heap_t* heap)
 {
-    if (heap->size == 0) return 0;
+    if (heap_empty(heap)) return 0;
     int* arr = heap->arr;
     int head = arr[0];
     
@@ -71,8 +71,14 @@ int pop(heap_t* heap)
 
 int peek(heap_t* heap)
 {
-    if (heap->size == 0) return 0;
+    if (heap_empty(heap)) return 0;
     else return heap->arr[0];
+}
+
+int heap_empty(heap_t* heap)
+{
+    if (heap->size == 0) return 1;
+    else return 0;
 }
 
 void heapsort(int* arr, int from, int to)
