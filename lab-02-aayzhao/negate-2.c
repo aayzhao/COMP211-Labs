@@ -8,9 +8,9 @@ int main(int argc, char** argv)
     printf("The negation of the 32-bit two's complement integer %s is: ", argv[argc - 1]);
     
     char* str = argv[argc - 1];
-    char ch = str[0];
-    int len = 0;
-
+    int len = 0; // counter for length of str
+    
+    // negate all bits
     while (str[len] != '\0')
     {
         if (str[len] == '0')
@@ -23,6 +23,7 @@ int main(int argc, char** argv)
         }
         len++;
     }
+    // add 1 to the string representation
     for (int i = len - 1; i >= 0; i--)
     {
         if (str[i] == '0') 
@@ -33,6 +34,6 @@ int main(int argc, char** argv)
         else str[i] = '0';
     }
 
-    printf("%s.\n", str);
+    printf("%s.\n", str); // print out string
     return EXIT_SUCCESS;
 }

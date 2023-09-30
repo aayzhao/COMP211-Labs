@@ -21,6 +21,12 @@ Basic string library function implmentations. Part 1 is
 Convert strings to lowercase, Part 2 is very rudimentary text justification
 and truncation, using stdio.h functions.
 
+## Lab 02
+Lab dealing with binary operations. Part 1 is converting ints to 16-bit
+representation with MSB indicating positive or negative. Part 2 is
+converting ints to 16-bit representation in 2's complement. Part 3 is negating
+2's complement, given a string of binary. 
+
 ## Tests
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
@@ -46,6 +52,10 @@ supports printing long and int arrays.
 ### arraystruct.h
 Contains declarations for the array-t struct, which mimics arrays in java. 
 Also declares helper functions for manipulating array-t structs. 
+
+### binops.h
+Contains declarations for binary operation functions, such as printing the
+binary representation of a given int.
 
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified key. Github 
