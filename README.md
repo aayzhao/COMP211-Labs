@@ -39,12 +39,9 @@ makefile located in /tests/.
 
 ### algo.h
 Contains declarations for algorithms. Includes algorithms such as binary
-search (for sorted arrays), and heapsort, for long and int arrays. Declarations
-for the heap struct and its helper functions are located here as well.
-
-### arrfill.h
-Contains declarations for functions to fill int, long arrays with specified values, or
-with runs of values in either ascending or descending orders.
+search (for sorted arrays), algorithms for filling arrays, and heapsort. 
+Declarations for the heap struct and its helper functions are located here 
+as well. 
 
 ### output.h
 Contains declarations for functions to print arrays to console. Currently 

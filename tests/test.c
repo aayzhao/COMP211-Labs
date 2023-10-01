@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../includes/output.h"
-#include "../includes/arrfill.h"
 #include "../includes/arraystruct.h"
 #include "../includes/algo.h"
 #include "../includes/binops.h"
@@ -49,5 +48,13 @@ int main()
     printf("\n");
 
     destroy_heap(heap);
+    
+    int arr[10];
+    int size = 10;
+
+    fill(arr, size, 5);
+    printintarr(arr, size);
+
     return EXIT_SUCCESS;
+    
 }

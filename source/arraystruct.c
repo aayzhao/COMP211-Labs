@@ -2,7 +2,7 @@
 // Dependent on arrayfill.h
 #include <stdio.h>
 #include <stdbool.h>
-#include "../includes/arrfill.h"
+#include "../includes/algo.h"
 #include "../includes/arraystruct.h"
 
 void arrayfill(array_t *arr, long val)

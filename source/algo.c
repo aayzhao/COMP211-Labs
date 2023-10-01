@@ -11,7 +11,7 @@ void bubbleup(int* arr, int idx);
 
 heap_t* create_heap(int cap)
 {
-    heap_t* heap = malloc(sizeof(heap_t));
+    heap_t* heap = (heap_t*) malloc(sizeof(heap_t));
     heap->cap = cap;
     heap->arr = malloc(sizeof(int) * cap);
     heap->size = 0;
@@ -306,4 +306,56 @@ int arr_min(int *arr, int size)
     int min = INT_MAX;
     for (int i = 0; i < size; i++) if (arr[i] < min) min = arr[i];
     return min;
+}
+
+void fillasc(int arr[], int size, int val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val++;
+    }
+}
+
+void filldesc(int arr[], int size, int val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val--;
+    }
+}
+
+void fill(int arr[], int size, int val)
+{
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = val;
+    }
+}
+
+void lfillasc(long arr[], int size, long val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val++;
+    }
+}
+
+void lfilldesc(long arr[], int size, long val)
+{
+    int _val = val;
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = _val--;
+    }
+}
+
+void lfill(long arr[], int size, long val)
+{
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = val;
+    }
 }
