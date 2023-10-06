@@ -4,9 +4,8 @@
 #include <stdlib.h>
 
 // declare constants
-const int SHORT_MAX = 32767;
-const int SHORT_MIN = -32768;
-
+#define SHORT_MAX 32767
+#define SHORT_MIN -32767 
 // put 16 bits from num into a given int array
 void b10b2(int* bits, int num)
 {   

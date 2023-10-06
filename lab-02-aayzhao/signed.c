@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 // declare constants
-const int SHORT_MAX = 32767;
-const int SHORT_MIN = -32767; // short min value in 16 bits without two's complement is -32767 
+#define SHORT_MAX 32767
+#define SHORT_MIN -32767 // short min value in 16 bits without two's complement is -32767 
 
 // pull out 16 bits from given int num
 void b10b2(int* bits, int num)
