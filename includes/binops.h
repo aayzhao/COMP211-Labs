@@ -2,6 +2,25 @@
 #define BINOPS_H
 // All functions use 2's complement representation for signed integers and longs
 
+#define SIZE sizeof(int) * 8
+
+// Returns pointer to a string that represents num
+// in twos complement binary.
+char* itob(int num, int size);
+
+// Returns num after mask has been applied.
+int mask_bits(int num, int mask);
+
+// Returns num after bits have been set.
+int set_bits(int num, int bits);
+
+// Returns num after bits have been inversed.
+int inverse_bits(int num, int bits);
+
+// returns the bits in the number from startbit to
+// end bit (including startbit and endbit);
+int bit_select(int num, int startbit, int endbit);
+
 // print out the base 2 representation of a signed integer
 void printsib2(int b10);            // input: signed integer to be printed
 
