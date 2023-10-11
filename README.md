@@ -55,7 +55,7 @@ associate
 ### binops.h
 Contains declarations for binary operation functions, such as printing the
 binary representation of a given int. Also has itob functions for converting
-ints into their binary representation as a char*.
+ints into their binary representation as a char buffer.
 
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified SSH key. Github 
