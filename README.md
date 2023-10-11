@@ -50,7 +50,8 @@ as well.
 
 ### output.h
 Contains declarations for functions to print arrays to console. Currently 
-supports printing long and int arrays.
+supports printing long and int arrays. Can print simply the elements, or perform
+formatting adjustments, such as adding braces and commas.
 
 ### arraystruct.h
 Contains declarations for the array-t struct, which mimics arrays in java;
