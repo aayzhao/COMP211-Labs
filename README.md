@@ -17,9 +17,9 @@ Files for following along and experimentation during classes
 Simple "Hello, World" lab. 
 
 ## Lab 01
-Basic string library function implmentations. Part 1 is
-Convert strings to lowercase, Part 2 is very rudimentary text justification
-and truncation, using stdio.h functions.
+Basic string library function implmentations. Part 1 is converting strings to 
+lowercase, Part 2 is very rudimentary text justification and truncation, using 
+stdio.h functions.
 
 ## Lab 02
 Lab dealing with binary operations. Part 1 is converting ints to 16-bit
@@ -54,7 +54,8 @@ associate
 
 ### binops.h
 Contains declarations for binary operation functions, such as printing the
-binary representation of a given int.
+binary representation of a given int. Also has itob functions for converting
+ints into their binary representation as a char*.
 
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified SSH key. Github 
