@@ -18,10 +18,17 @@ int main(){
 // i.e. to test the masking 0xa5 with 0x0f, do:
 //      debug(0xa5, 0x0f, mask_bits)
 void debug(int num, int bits, int (*fun)(int, int)){
-    printf("For integer \t\t0x%x =\t%s\n", num, itob(num, SIZE));
-    printf("Applying bits \t\t0x%x = \t%s:\n", bits, itob(bits, SIZE));
+    char* str = itob(num, SIZE);
+    printf("For integer \t\t0x%x =\t%s\n", num, str);
+    printf("Applying bits \t\t0x%x = \t%s:\n", bits, str);
+    
     int new_num = fun(num, bits);
-    printf("Function returns:  \t0x%x = \t%s\n\n", new_num, itob(new_num, SIZE));
+    free(str);
+    str = itob(new_num, SIZE);
+    printf("Function returns:  \t0x%x = \t%s\n\n", new_num, str);
+
+    free(str);
+    str = NULL;
 }
 
 // Function to call bit_select and print debug information.
@@ -32,7 +39,10 @@ void debug(int num, int bits, int (*fun)(int, int)){
 //      and printing additional debug information.
 void debug_bitsel(int n, int start, int end){
     int i = bit_select(n, start, end);
-    printf("For int \t\t0x%x = \t%s:\n", n, itob(n, SIZE));
-    printf("Keeping bits %i to %i: \t0x%x =  \t%s\n\n", start, end, i, itob(i, SIZE));
+    char* str = itob(n, SIZE);
+    printf("For int \t\t0x%x = \t%s:\n", n, str);
+    printf("Keeping bits %i to %i: \t0x%x =  \t%s\n\n", start, end, i, str);
+    free(str);
+    str = NULL;
 }
 

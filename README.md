@@ -27,6 +27,11 @@ representation with MSB indicating positive or negative. Part 2 is
 converting ints to 16-bit representation in 2's complement. Part 3 is negating
 2's complement, given a string of binary. 
 
+## Lab 03
+Lab about further binary operations, specifically masking, negating, setting,
+and selecting. Also implements a itob function that prints an 2's complement
+integer to console for use in debugging.
+
 ## /tests/
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
