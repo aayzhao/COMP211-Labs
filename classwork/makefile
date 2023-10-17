@@ -4,12 +4,13 @@ TA ?= test
 BIN = ../bin/
 INC = ../includes/
 SRC = ../source/
+FLAGS = -Werror -Wall
 
 #../bin/%.o: ../source/%.c ../includes/%.h
 #	$(CC) -c -o $@ ../source/%.c
 
 $(TA).out: $(BIN)binops.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o
-	$(CC) $(BIN)binops.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o -o $@
+	$(CC) $(FLAGS) $(BIN)binops.o $(BIN)output.o $(BIN)arraystruct.o $(BIN)algo.o $(BIN)$(TA).o -o $@
 
 $(BIN)$(TA).o: $(TA).c
 	$(CC) -c $(TA).c -o $@

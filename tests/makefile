@@ -4,6 +4,7 @@ TA ?= test
 BIN = ../bin/
 INC = ../includes/
 SRC = ../source/
+#FLAGS = -Werror -Wall
 
 #../bin/%.o: ../source/%.c ../includes/%.h
 #	$(CC) -c -o $@ ../source/%.c
