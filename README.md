@@ -32,6 +32,11 @@ Lab about further binary operations, specifically masking, negating, setting,
 and selecting. Also implements a itob function that prints an 2's complement
 integer to console for use in debugging.
 
+## Lab 04
+MIPS instruction comprehension lab. Simulates translating a 32 bit instruction
+into the assembly code, then the operations performed by the assembly 
+instructions. Will be uploaded after Lab 04 deadline.
+
 ## /tests/
 This file has some self practice for things outside of the classroom. 
 It also holds sanity tests, mainly for open-CLI quizzes.
