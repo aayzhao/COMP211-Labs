@@ -6,18 +6,23 @@
 #include "../includes/algo.h"
 #include "../includes/binops.h"
 
+void func(double x)
+{
+    x += 10.0;
+    printf("x=%f\n", x);
+}
+
 int main()
 {
-    short x = 0x0037;
-    short y = 0x009B;    
-    
-    short z = x & y;
-    printf("%d\n", z);
-    
-    short a = -32768;
-    short b = a + (a + 1);
-    printf("%d\n", b);
+    double* ptr = (double *) malloc( 8 );
+    double x = 211.0;
+    *ptr = x;
+    while (x < 250.0) 
+    {
+        func(x);
+        x += 10.0;
+    }
 
-    return EXIT_SUCCESS;
-    
+    free(ptr);
+    return EXIT_SUCCESS;    
 }
