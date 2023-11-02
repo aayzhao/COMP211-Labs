@@ -3,6 +3,124 @@
 #include <limits.h>
 #include "../includes/algo.h"
 
+bucket_node_t* create_bucket_node()
+{
+    bucket_node_t* node = malloc(sizeof(bucket_node_t));
+    node->val = 0;
+    node->next = NULL;
+    node->prev = NULL;
+    return node;
+}
+
+void destroy_bucket_node(bucket_node_t* node)
+{
+    if (node == NULL) return;
+
+    while (node->next != NULL)
+    {
+        node = node->next;
+        free(node->prev);
+        node->prev = NULL;
+    }
+    free(node);
+}
+
+bucket_node_t* add_node(bucket_node_t* node, int val, int* changed)
+{
+    *changed = FAIL_VAL;
+    if (node == NULL)
+    {
+        bucket_node_t* new_node = create_bucket_node();
+        node->val = val;
+        *changed = SUCCESS_VAL;
+        return new_node;
+    }
+    bucket_node_t* it = node;
+    while (it->next != NULL) // no duplicate values
+    {
+        if (it->val == val) return node;
+    }
+    it->next = (bucket_node_t*) malloc(sizeof(bucket_node_t));
+    it->next->val = val;
+    it->next->prev = it;
+    *changed = SUCCESS_VAL;
+    return node;
+}
+
+bucket_node_t* remove_node(bucket_node_t* node, int val)
+{
+    bucket_node_t* it = node;
+    while (it != NULL)
+    {
+        if (it->val == val)
+        {
+            if (it->prev == NULL) // head node 
+            {
+                if (it->next == NULL) 
+                {
+                    destroy_bucket_node(it);
+                    return NULL;
+                }
+                it = it->next;
+                it->prev->next = NULL;
+                destroy_bucket_node(it->prev);
+                it->prev = NULL;
+                return it;
+            } 
+            else if (it->next == NULL) // tail node (and not head node)
+            {
+                it->prev->next = NULL;
+                destroy_bucket_node(it);
+                return node;
+            }
+            else // body node
+            {
+                bucket_node_t* target = it;
+                it = it->prev;
+                it->next = it->next->next;
+                if (it->next != NULL) it->next->prev = it;
+                target->next = NULL;
+                target->prev = NULL;
+                destroy_bucket_node(target);
+                return node;
+            }
+        }
+        else it = it->next;
+    }
+
+    return FAIL_VAL;
+}
+
+hashset_t* create_hashset()
+{
+    hashset_t* set = malloc(sizeof(set));
+    set->arr = malloc(sizeof(bucket_node_t) * DEFAULT_SIZE);
+    set->cap = DEFAULT_SIZE;
+    set->size = 0;
+
+    return set;
+}
+
+void destroy_hashset(hashset_t* set)
+{
+    if (set == NULL) return;
+    
+    for (int i = 0; i < set->cap; i++)
+    {
+        if (set->arr[i] != NULL) destroy_bucket_node(set->arr[i]);
+    }
+
+    free(set);
+}
+
+unsigned int hash_func(unsigned int x)
+{
+    x = ((x >> 16) ^ x) * 1;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+    return x;
+}
+
 void bubbledown(int* arr, int idx, int to);
 void lbubbledown(long* arr, int idx, int to);
 void dequeue(int* arr, int from, int to);

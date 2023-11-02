@@ -1,9 +1,80 @@
 // Declarations for various algorthims, such as sorting and search algorithms. Also contains declarations
-// for the heap struct and associated helper functions.
+// for the heap struct, hashset struct, and associated helper functions.
 #ifndef ALGO_H
 #define ALGO_H
 
+////////////////////////////////////////////////////////
+//
+// HASHSET STRUCT, HASH FUNCTION, AND HELPER FUNCTION DECLARATIONS
+//
+////////////////////////////////////////////////////////
+
+// Hashset structs should only be modified using the given methods
+// in this header file. Bypassing methods can result in undefined
+// behavior. Guarantees O (1) average runtime for add, remove, contains
+
+#define HASHING_CONST32 0x45d9f3b
+#define INV_HASHING_CONST32 0x119de1f3
+#define DEFAULT_L_FACTOR 0.75
+#define DEFAULT_SIZE 16
+#define SUCCESS_VAL 1
+#define FAIL_VAL 0
+
+// linked list implementation for hash set
+typedef struct bucket_node {
+    int val;
+    struct bucket_node* prev;
+    struct bucket_node* next;
+} bucket_node_t;
+
+// bucket node functions;
+// SHOULD NOT BE TOUCHED BY USER
+bucket_node_t* create_bucket_node();
+void destroy_bucket_node(bucket_node_t* node);
+bucket_node_t* remove_node(bucket_node_t* node, int val);
+bucket_node_t* add_node(bucket_node_t* node, int val, int* changed);
+
+typedef struct hash_set {
+    bucket_node_t* *arr;
+    int cap;
+    int size;    
+} hashset_t;
+
+// create heap_t with given size and return a pointer to it.
+hashset_t* create_hashset();
+
+// destroy a given hashset
+void destroy_hashset(hashset_t* set); // pointer to hashset
+
+// HashSet helper functions return FAIL_VAL(if failed, 0 by default), 
+// SUCCESS_VAL(1 by default) if successful
+
+// attempts to add a number to hashset, returns SUCCESS_VAL if success
+// FAIL_VAL otherwise
+int hashset_add(hashset_t* set,     // hashset pointer
+                int val);           // value to be added
+
+// Checks if the set contains the specified number
+// returns SUCCESS_VAL if true, FAIL_VAL if false
+int hashset_contains(hashset_t* set,// hashset pointer 
+                     int val);      // value to check if contained
+
+// attempts to remove a value, if present. Returns SUCCESS_VAL if 
+// successful, FAIL_VAL otherwise
+int hashset_remove(hashset_t* set,  // hashset pointer
+                   int val);        // value to remove
+
+// returns SUCCESS_VAL if hashset is empty, FAIL_VAL otherwise
+int hashset_is_empty(hashset_t* set);   // hashset pointer
+
+////////////////////////////////////////////////////////
+//
+// HEAP STRUCT AND HELPER FUNCTION DECLARATIONS
+//
+////////////////////////////////////////////////////////
+
 // Heaps should only be modified using the given methods
+// in this header file
 // Modification bypassing methods can result in
 // undefined behavior
 // max heap by default. Handles ints. Guarantees O (log n) runtime for pop, push
