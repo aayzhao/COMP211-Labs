@@ -2,6 +2,64 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "../includes/algo.h"
+int next_hashtable_size(int current)
+{
+    switch (current) 
+    {
+        case 53:
+            return 97;
+        case 97:
+            return 193;
+        case 193:
+            return 389;
+        case 389:
+            return 769;
+        case 769:
+            return 1543;
+        case 1543:
+            return 3079;
+        case 3079:
+            return 6151;
+        case 6151:
+            return 12289;
+        case 12289:
+            return 24593;
+        case 24593:
+            return 49157;
+        case 49157:
+            return 98317;
+        case 98317:
+            return 196613;
+        case 196613:
+            return 393241;
+        case 393241:
+            return 786433;
+        case 786433:
+            return 1572869;
+        case 1572869:
+            return 3145739;
+        case 3145739:
+            return 6291469;
+        case 6291469:
+            return 12582917;
+        case 12582917:
+            return 25165843;
+        case 25165843:
+            return 50331653;
+        case 50331653:
+            return 100663319;
+        case 100663319:
+            return 201326611;
+        case 201326611:
+            return 402653189;
+        case 402653189:
+            return 805306457;
+        case 805306457:
+            return 1610612741;
+        default:
+            return current * 2;
+    }
+}
 
 bucket_node_t* create_bucket_node()
 {
@@ -31,32 +89,37 @@ bucket_node_t* add_node(bucket_node_t* node, int val, int* changed)
     if (node == NULL)
     {
         bucket_node_t* new_node = create_bucket_node();
-        node->val = val;
+        new_node->val = val;
         *changed = SUCCESS_VAL;
         return new_node;
     }
+
     bucket_node_t* it = node;
     while (it->next != NULL) // no duplicate values
     {
         if (it->val == val) return node;
+        it = it->next;
     }
-    it->next = (bucket_node_t*) malloc(sizeof(bucket_node_t));
+    if (it->val == val) return node;
+    it->next = create_bucket_node();
     it->next->val = val;
     it->next->prev = it;
     *changed = SUCCESS_VAL;
     return node;
 }
 
-bucket_node_t* remove_node(bucket_node_t* node, int val)
+bucket_node_t* remove_node(bucket_node_t* node, int val, int* changed)
 {
+    *changed = FAIL_VAL;
     bucket_node_t* it = node;
     while (it != NULL)
     {
         if (it->val == val)
         {
+            *changed = SUCCESS_VAL;
             if (it->prev == NULL) // head node 
             {
-                if (it->next == NULL) 
+                if (it->next == NULL) // head node and tail node 
                 {
                     destroy_bucket_node(it);
                     return NULL;
@@ -88,13 +151,15 @@ bucket_node_t* remove_node(bucket_node_t* node, int val)
         else it = it->next;
     }
 
-    return FAIL_VAL;
+    return node;
 }
+
+void resize_hashset(hashset_t* set);
 
 hashset_t* create_hashset()
 {
     hashset_t* set = malloc(sizeof(set));
-    set->arr = malloc(sizeof(bucket_node_t) * DEFAULT_SIZE);
+    set->arr = malloc(sizeof(bucket_node_t*) * DEFAULT_SIZE);
     set->cap = DEFAULT_SIZE;
     set->size = 0;
 
@@ -113,12 +178,113 @@ void destroy_hashset(hashset_t* set)
     free(set);
 }
 
+void printhashset(hashset_t* set)
+{
+    printf("\n-----------------------------\n");
+    printf("HashSet max capacity: %d\nHashSet size: %d\n", set->cap, set->size);
+    printf("\nHashSet bucket contents:\n");
+    for (int i = 0; i < set->cap; i++)
+    {
+        printf("Bucket %d: ", i);
+        if (set->arr[i] == NULL) printf("EMPTY\n");
+        else 
+        {
+            bucket_node_t* it = set->arr[i];
+            while (it != NULL) 
+            {
+                printf("%d ", it->val);
+                it = it->next;
+            }
+            printf("\n");
+        }
+    }
+    printf("\n----------------------------\n");
+}
+
 unsigned int hash_func(unsigned int x)
 {
-    x = ((x >> 16) ^ x) * 1;
-    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * HASHING_CONST32;
+    x = ((x >> 16) ^ x) * HASHING_CONST32;
     x = (x >> 16) ^ x;
+    
     return x;
+    // return (x * KNUTH_HASH_CONST) % (unsigned int) 0xFFFFFFFF; 
+}
+
+int hashset_add(hashset_t* set, int val)
+{
+    unsigned int idx = hash_func(val) % set->cap;
+    int ret_val;
+
+    set->arr[idx] = add_node(set->arr[idx], val, &ret_val);
+    if (ret_val == SUCCESS_VAL) set->size++;
+
+    // check if resizing is necessary
+    int max_load = set->cap * DEFAULT_L_FACTOR;
+    if (set->size > max_load)
+    {
+        resize_hashset(set);
+    }
+
+    return ret_val;
+}
+
+int hashset_contains(hashset_t* set, int val)
+{
+    unsigned int idx = hash_func(val) % set->cap;
+    bucket_node_t* it = set->arr[idx];
+
+    while (it != NULL)
+    {
+        if (it->val == val) return SUCCESS_VAL;
+        it = it->next;
+    }
+
+    return FAIL_VAL;
+}
+
+int hashset_remove(hashset_t* set, int val)
+{
+    unsigned int idx = hash_func(val) % set->cap;
+    int ret_val;
+    set->arr[idx] = remove_node(set->arr[idx], val, &ret_val);
+    if (ret_val == SUCCESS_VAL) set->size--;
+
+    return ret_val;
+}
+
+int hashset_is_empty(hashset_t* set)
+{
+    if (set->size == 0) return SUCCESS_VAL;
+    return FAIL_VAL;
+}
+
+void resize_hashset(hashset_t* set)
+{
+    int old_cap = set->cap; // save old capacity temporarily
+    int count = set->size; // DEBUG - save size, check after add to make sure is consistent
+    set->cap = next_hashtable_size(set->cap); // update hashset capacity
+    set->size = 0;
+
+    bucket_node_t** old_arr = set->arr; // create array pointer for old array
+    set->arr = malloc(sizeof(bucket_node_t*) * set->cap); // allocate new array
+    
+
+    for (int i = 0; i < old_cap; i++)
+    {
+        if (old_arr[i] != NULL)
+        {
+            bucket_node_t* it = old_arr[i];
+            while (it != NULL)
+            {
+                hashset_add(set, it->val);
+                it = it->next;
+            }
+            destroy_bucket_node(old_arr[i]);
+        }
+    }
+
+    if (count != set->size) printf("ERROR! RESIZE FAILED!");
 }
 
 void bubbledown(int* arr, int idx, int to);

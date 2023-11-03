@@ -13,12 +13,19 @@
 // in this header file. Bypassing methods can result in undefined
 // behavior. Guarantees O (1) average runtime for add, remove, contains
 
-#define HASHING_CONST32 0x45d9f3b
-#define INV_HASHING_CONST32 0x119de1f3
+#define HASHING_CONST32 0x45d9f3b // constant found from stackoverflow 
+#define INV_HASHING_CONST32 0x119de1f3 // constant to invert hashing from previous integer
+#define KNUTH_HASH_CONST 2654435761 // constant for Knuth's multiplicative method of hashing
 #define DEFAULT_L_FACTOR 0.75
-#define DEFAULT_SIZE 16
+#define DEFAULT_SIZE 53
 #define SUCCESS_VAL 1
 #define FAIL_VAL 0
+
+// hashing function
+unsigned int hash_func(unsigned int x);
+
+// function for getting next size of hashset
+int next_hashtable_size(int current);
 
 // linked list implementation for hash set
 typedef struct bucket_node {
@@ -31,7 +38,7 @@ typedef struct bucket_node {
 // SHOULD NOT BE TOUCHED BY USER
 bucket_node_t* create_bucket_node();
 void destroy_bucket_node(bucket_node_t* node);
-bucket_node_t* remove_node(bucket_node_t* node, int val);
+bucket_node_t* remove_node(bucket_node_t* node, int val, int* changed);
 bucket_node_t* add_node(bucket_node_t* node, int val, int* changed);
 
 typedef struct hash_set {
@@ -66,6 +73,9 @@ int hashset_remove(hashset_t* set,  // hashset pointer
 
 // returns SUCCESS_VAL if hashset is empty, FAIL_VAL otherwise
 int hashset_is_empty(hashset_t* set);   // hashset pointer
+
+// prints out the contents of a given HashSet
+void printhashset(hashset_t* set);
 
 ////////////////////////////////////////////////////////
 //
