@@ -35,7 +35,12 @@ integer to console for use in debugging.
 ## Lab 04
 MIPS instruction comprehension lab. Simulates translating a 32 bit instruction
 into the assembly code, then the operations performed by the assembly 
-instructions. Will be uploaded after Lab 04 deadline.
+instructions.
+
+## Lab 05
+This lab simulates caching operations done by the CPU, specifically read-data
+instructions. Implementation requires both Direct Mapping and Fully Associative
+cache mapping techniques. Will be uploaded after the due date. 
 
 ## /tests/
 This file has some self practice for things outside of the classroom. 
@@ -50,8 +55,16 @@ makefile located in /tests/.
 ### algo.h
 Contains declarations for algorithms. Includes algorithms such as binary
 search (for sorted arrays), algorithms for filling arrays, and heapsort. 
-Declarations for the heap struct and its helper functions are located here 
-as well. 
+
+Declarations for the heap struct and its helper functions are located here.
+
+Declarations for the hashset struct and its helper functions are located here.
+
+Non-exhuastive list of Implemented algorithms:
+- Binary Search (for sorted int and long arrays)
+- Heapsort (for int and long arrays)
+- HashSet add, remove, contains
+- Heap push, pop, contains 
 
 ### output.h
 Contains declarations for functions to print arrays to console. Currently 
