@@ -158,7 +158,7 @@ void resize_hashset(hashset_t* set);
 
 hashset_t* create_hashset()
 {
-    hashset_t* set = malloc(sizeof(set));
+    hashset_t* set = malloc(sizeof(hashset_t));
     set->arr = malloc(sizeof(bucket_node_t*) * DEFAULT_SIZE);
     set->cap = DEFAULT_SIZE;
     set->size = 0;
@@ -215,7 +215,7 @@ int hashset_add(hashset_t* set, int val)
 {
     unsigned int idx = hash_func(val) % set->cap;
     int ret_val;
-
+    
     set->arr[idx] = add_node(set->arr[idx], val, &ret_val);
     if (ret_val == SUCCESS_VAL) set->size++;
 
@@ -223,7 +223,9 @@ int hashset_add(hashset_t* set, int val)
     int max_load = set->cap * DEFAULT_L_FACTOR;
     if (set->size > max_load)
     {
+        // printf("resizing necessary\n");
         resize_hashset(set);
+        // printf("resized\n");
     }
 
     return ret_val;
@@ -261,19 +263,24 @@ int hashset_is_empty(hashset_t* set)
 
 void resize_hashset(hashset_t* set)
 {
+    printf("begin resizing\n");
+    printf("save old values, update with new ones\n");
     int old_cap = set->cap; // save old capacity temporarily
     int count = set->size; // DEBUG - save size, check after add to make sure is consistent
     set->cap = next_hashtable_size(set->cap); // update hashset capacity
     set->size = 0;
-
+    
+    printf("save old array, allocate new table of pointers\n");
     bucket_node_t** old_arr = set->arr; // create array pointer for old array
+    printf("allocate mem for new array\n");
     set->arr = malloc(sizeof(bucket_node_t*) * set->cap); // allocate new array
     
-
+    printf("mem allocated successfully\n");
     for (int i = 0; i < old_cap; i++)
     {
         if (old_arr[i] != NULL)
         {
+            printf("Non-empty bucket at %d\n", i);
             bucket_node_t* it = old_arr[i];
             while (it != NULL)
             {
@@ -283,6 +290,9 @@ void resize_hashset(hashset_t* set)
             destroy_bucket_node(old_arr[i]);
         }
     }
+    
+    printf("attempt to free old array\n");
+    free(old_arr);
 
     if (count != set->size) printf("ERROR! RESIZE FAILED!");
 }
