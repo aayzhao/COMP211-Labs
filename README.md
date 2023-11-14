@@ -66,7 +66,7 @@ Declarations for the hashset struct and its helper functions are located here.
 Non-exhuastive list of Implemented algorithms:
 - Binary Search (for sorted int and long arrays)
 - Heapsort (for int and long arrays)
-- HashSet add, remove, contains
+- HashSet add, remove, contains (CURRENTLY CAUSES SEG FAULT, DO NOT USE)
 - Heap push, pop, contains 
 
 ### output.h
