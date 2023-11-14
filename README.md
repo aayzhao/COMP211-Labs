@@ -40,7 +40,10 @@ instructions.
 ## Lab 05
 This lab simulates caching operations done by the CPU, specifically read-data
 instructions. Implementation requires both Direct Mapping and Fully Associative
-cache mapping techniques. Will be uploaded after the due date. 
+cache mapping techniques.
+
+## Lab 06
+Will be uploaded after due date 
 
 ## /tests/
 This file has some self practice for things outside of the classroom. 
