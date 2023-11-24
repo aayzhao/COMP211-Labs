@@ -1,0 +1,94 @@
+----initial tasks----
+(4)[ 12:99:100:0.99 13:1:50:0.02 14:7:75:0.09 15:0:25:0.00 ]
+----insert task----
+insert task{16:1} at index 1 with 100 cycles
+(5)[ 12:99:100:0.99 16:1:100:0.01 13:1:50:0.02 14:7:75:0.09 15:0:25:0.00 ]
+----set task----
+set task {pid:15} to index 1
+(5)[ 12:99:100:0.99 15:0:25:0.00 16:1:100:0.01 13:1:50:0.02 14:7:75:0.09 ]
+----get task----
+task at index 4: pid=14 priority=7 remaining cycles=75
+---schedule----
+(5)[ 15:0:25:0.00 13:1:50:0.02 16:1:100:0.01 12:99:100:0.99 14:7:75:0.09 ]
+----remove_task----
+remove task pid=100
+(5)[ 15:0:25:0.00 13:1:50:0.02 16:1:100:0.01 12:99:100:0.99 14:7:75:0.09 ]
+----swap task----
+swap task: pid=12 <-> pid=16
+(5)[ 15:0:25:0.00 13:1:50:0.02 12:99:100:0.99 16:1:100:0.01 14:7:75:0.09 ]
+----dispatch tasks----
+Task 15 run for 5 cycle(s).
+Task 15 run for 5 cycle(s).
+Task 15 run for 5 cycle(s).
+Task 15 run for 5 cycle(s).
+Task 15 run for 5 cycle(s).
+Task 15 Completed.
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 13 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 14 run for 5 cycle(s).
+Task 16 run for 5 cycle(s).
+Task 16 Completed.
+Task 13 ran for 5 cycle(s).
+Task 13 Completed.
+Task 14 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 14 ran for 5 cycle(s).
+Task 14 Completed.
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 ran for 5 cycle(s).
+Task 12 Completed.

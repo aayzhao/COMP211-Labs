@@ -43,7 +43,13 @@ instructions. Implementation requires both Direct Mapping and Fully Associative
 cache mapping techniques.
 
 ## Lab 06
-Will be uploaded after due date 
+A lab simulating the way CPUs schedule and execute tasks. Includes implementations of 
+heapify, linkedlist, and other structures in order for the simulation to run. 
+Scheduling commands are guaranteed to execute in O (n) time.
+
+## Project
+Final project for COMP 211. A working shell written in C that can execute built-in
+and native linux commands. Will be uploaded after the due date. 
 
 ## /tests/
 This file has some self practice for things outside of the classroom. 

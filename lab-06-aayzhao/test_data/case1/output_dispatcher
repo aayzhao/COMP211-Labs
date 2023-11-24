@@ -1,0 +1,334 @@
+----initial tasks----
+(15)[ 1:32:100:0.32 2:43:100:0.43 54:23:100:0.23 123:99:100:0.99 124:13:100:0.13 12354:12:100:0.12 1023:0:100:0.00 454:2:100:0.02 4452:0:100:0.00 56:24:100:0.24 65:12:100:0.12 3:5:100:0.05 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 ]
+----insert task----
+insert task{675:0} at index 9 with 100 cycles
+(16)[ 1:32:100:0.32 2:43:100:0.43 54:23:100:0.23 123:99:100:0.99 124:13:100:0.13 12354:12:100:0.12 1023:0:100:0.00 454:2:100:0.02 4452:0:100:0.00 675:0:100:0.00 56:24:100:0.24 65:12:100:0.12 3:5:100:0.05 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 ]
+----set task----
+set task {pid:124} to index 15
+(16)[ 1:32:100:0.32 2:43:100:0.43 54:23:100:0.23 123:99:100:0.99 12354:12:100:0.12 1023:0:100:0.00 454:2:100:0.02 4452:0:100:0.00 675:0:100:0.00 56:24:100:0.24 65:12:100:0.12 3:5:100:0.05 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 124:13:100:0.13 ]
+----get task----
+task at index 0: pid=1 priority=32 remaining cycles=100
+---schedule----
+(16)[ 4452:0:100:0.00 675:0:100:0.00 1023:0:100:0.00 124:13:100:0.13 12354:12:100:0.12 3:5:100:0.05 454:2:100:0.02 1:32:100:0.32 2:43:100:0.43 56:24:100:0.24 65:12:100:0.12 54:23:100:0.23 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 123:99:100:0.99 ]
+----remove_task----
+remove task pid=3
+(15)[ 4452:0:100:0.00 675:0:100:0.00 1023:0:100:0.00 124:13:100:0.13 12354:12:100:0.12 454:2:100:0.02 1:32:100:0.32 2:43:100:0.43 56:24:100:0.24 65:12:100:0.12 54:23:100:0.23 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 123:99:100:0.99 ]
+----swap task----
+swap task: pid=123 <-> pid=1023
+(15)[ 4452:0:100:0.00 675:0:100:0.00 123:99:100:0.99 124:13:100:0.13 12354:12:100:0.12 454:2:100:0.02 1:32:100:0.32 2:43:100:0.43 56:24:100:0.24 65:12:100:0.12 54:23:100:0.23 4:7:100:0.07 95:98:100:0.98 568:43:100:0.43 1023:0:100:0.00 ]
+----dispatch tasks----
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 675 ran for 5 cycle(s).
+Task 1023 ran for 5 cycle(s).
+Task 4452 ran for 5 cycle(s).
+Task 4452 Completed.
+Task 675 ran for 5 cycle(s).
+Task 675 Completed.
+Task 1023 ran for 5 cycle(s).
+Task 1023 Completed.
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 454 ran for 5 cycle(s).
+Task 454 Completed.
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 12354 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 4 ran for 5 cycle(s).
+Task 4 Completed.
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 56 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 65 ran for 5 cycle(s).
+Task 65 Completed.
+Task 12354 ran for 5 cycle(s).
+Task 12354 Completed.
+Task 56 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 124 ran for 5 cycle(s).
+Task 124 Completed.
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 2 ran for 5 cycle(s).
+Task 54 ran for 5 cycle(s).
+Task 54 Completed.
+Task 56 ran for 5 cycle(s).
+Task 56 Completed.
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 1 ran for 5 cycle(s).
+Task 1 Completed.
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 568 ran for 5 cycle(s).
+Task 568 Completed.
+Task 2 ran for 5 cycle(s).
+Task 2 Completed.
+Task 95 ran for 5 cycle(s).
+Task 123 ran for 5 cycle(s).
+Task 95 ran for 5 cycle(s).
+Task 95 Completed.
+Task 123 ran for 5 cycle(s).
+Task 123 Completed.

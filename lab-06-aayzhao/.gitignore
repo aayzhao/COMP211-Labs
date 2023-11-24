@@ -1,0 +1,10 @@
+# Build files
+*.o
+*.out
+lab06
+
+# macOS
+.DS_Store
+
+# IDE
+.idea
