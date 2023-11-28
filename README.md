@@ -90,6 +90,11 @@ Contains declarations for binary operation functions, such as printing the
 binary representation of a given int. Also has itob functions for converting
 ints into their binary representation as a char buffer.
 
+ftob functions are also provided for converting IEEE-754 floating point
+precision numbers into char buffers, along with size declarations. Also
+has a printfloat() function that prints each individual part of the float 
+for visual and formatting purposes.
+
 ## Signing
 As of 9/14/2023, all commits will be signed with a verified SSH key. Github 
 commits should reflect this in the commit history.
