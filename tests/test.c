@@ -7,8 +7,13 @@
 
 int main()
 {
-    int a = 0xff987cf0;
-    int b = 0xff987d98;
-    printf("%d\n", a - b);
-    return EXIT_SUCCESS;
+    float f1 = 1.5;
+    float f2 = 3.4;
+    float f3 = 5.125;
+    printfloat(f1); 
+    printfloat(f2);
+    printfloat(f3);
+
+    f1 *= -1;
+    printfloat(f1);
 }

@@ -17,6 +17,21 @@ char* itob(int num, int size)
     return bstr;
 }
 
+char* ftob(float num, int size)
+{   
+    char* bstr = malloc(sizeof(char) * (size + 1)); // allocate memory on heap for char buffer
+    bstr[size] = '\0'; // set last char to null char
+
+    for (int k = 0; k < size; k++)
+    {   
+        // shift num by k bits to left, mask last bit, then check
+        // if the last bit is 1
+        bstr[size - 1 - k] = (( *(int *) &num >> k) & 1) == 1 ? '1' : '0';
+    }   
+
+    return bstr;
+}
+
 int mask_bits(int num, int mask)
 {
     return num & mask; // bitwise AND will mask
@@ -92,3 +107,23 @@ void printuib2(unsigned int b10)
 
     printf("\n");
 }
+
+void printfloat(float f) 
+{
+    char* str = ftob(f, sizeof(float) * 8);
+    printf("Float:\t%f\n", f);
+    printf("Binary:\t%s\n", str);
+    printf("Sign:\t%c\n", str[0]);
+    printf("Exponent:\t");
+
+    for (int i = 1; i < 9; i++)
+        printf("%c", str[i]);
+
+    printf("\n");
+
+    printf("Mantissa:\t%s\n\n", &str[9]);
+    
+    free(str);    
+}
+
+

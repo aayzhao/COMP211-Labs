@@ -27,6 +27,9 @@ void printsib2(int b10);            // input: signed integer to be printed
 // print out base 2 representation of an unsigned integer
 void printuib2(unsigned int b10);   // input: unsigned integer
 
+// print out IEEE-754 float, divided into sign (1 bit), exponent (8 bits), and mantissa (23 bits)
+void printfloat(float f);
+
 // TODO: UNIMPLEMENTED
 // convert base 2 binary string into an int
 int b2tob10(char* b2str);           // input: null-terminated string of the binary number
