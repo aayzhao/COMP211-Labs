@@ -111,13 +111,13 @@ void printuib2(unsigned int b10)
 void printfloat(float f) 
 {
     char* str = ftob(f, sizeof(float) * 8);
-    printf("Float:\t%f\n", f);
-    printf("Binary:\t%s\n", str);
-    printf("Sign:\t%c\n", str[0]);
+    printf("Float:\t\t%f\n", f);
+    printf("Binary:\t\t%s\n", str);
+    printf("Sign:\t\t%c\n", str[0]);
     printf("Exponent:\t");
 
     for (int i = 1; i < 9; i++)
-        printf("%c", str[i]);
+        putchar(str[i]);
 
     printf("\n");
 
