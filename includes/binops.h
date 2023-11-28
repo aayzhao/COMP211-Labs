@@ -3,6 +3,9 @@
 // All functions use 2's complement representation for signed integers and longs
 
 #define SIZE sizeof(int) * 8
+#define SIZE_LONG sizeof(long) * 8
+#define FLOAT_SIZE 32 // IEEE-754 standard 4 byte format
+#define DOUBLE_SIZE 64 // IEEE-754 standard 8 byte format
 
 // Returns pointer to a string that represents num
 // in twos complement binary.

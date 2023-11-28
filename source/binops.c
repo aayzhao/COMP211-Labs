@@ -110,7 +110,7 @@ void printuib2(unsigned int b10)
 
 void printfloat(float f) 
 {
-    char* str = ftob(f, sizeof(float) * 8);
+    char* str = ftob(f, FLOAT_SIZE);
     printf("Float:\t\t%f\n", f);
     printf("Binary:\t\t%s\n", str);
     printf("Sign:\t\t%c\n", str[0]);
