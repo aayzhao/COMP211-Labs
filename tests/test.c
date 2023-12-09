@@ -4,8 +4,9 @@
 #include "../includes/arraystruct.h"
 #include "../includes/binops.h"
 #include "../includes/output.h"
+int a[300];
 
-int main()
+int main(int argc, char** argv)
 {
     float f1 = 1.5;
     float f2 = 3.4;
@@ -16,4 +17,7 @@ int main()
 
     f1 *= -1;
     printfloat(f1);
+    
+    printf("%d", argc);
+    printf("%s", argv[0]);
 }

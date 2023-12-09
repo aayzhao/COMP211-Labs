@@ -49,7 +49,7 @@ Scheduling commands are guaranteed to execute in O (n) time.
 
 ## Project
 Final project for COMP 211. A working shell written in C that can execute built-in
-and native linux commands. Will be uploaded after the due date. 
+and native linux commands. Uses fork() and execv() to execute programs. 
 
 ## /tests/
 This file has some self practice for things outside of the classroom. 
